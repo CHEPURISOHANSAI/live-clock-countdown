@@ -1,0 +1,140 @@
+/* Global Reset & Base Typography */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color-scheme: dark;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* Default Cyber Blue Theme */
+  --primary: #00f2fe;
+  --primary-glow: rgba(0, 242, 254, 0.35);
+  --primary-rgb: 0, 242, 254;
+  --accent: #4facfe;
+  --accent-glow: rgba(79, 172, 254, 0.3);
+  --bg-base: #050811;
+  --card-bg: rgba(12, 19, 36, 0.72);
+  --card-border: rgba(0, 242, 254, 0.16);
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+  --glow-1: rgba(0, 242, 254, 0.15);
+  --glow-2: rgba(79, 172, 254, 0.12);
+}
+
+/* Theme: Aurora Purple */
+body.theme-aurora-purple {
+  --primary: #c084fc;
+  --primary-glow: rgba(192, 132, 252, 0.35);
+  --primary-rgb: 192, 132, 252;
+  --accent: #f43f5e;
+  --accent-glow: rgba(244, 63, 94, 0.3);
+  --bg-base: #0a0514;
+  --card-bg: rgba(23, 13, 41, 0.72);
+  --card-border: rgba(192, 132, 252, 0.18);
+  --glow-1: rgba(192, 132, 252, 0.15);
+  --glow-2: rgba(244, 63, 94, 0.12);
+}
+
+/* Theme: Emerald Matrix */
+body.theme-emerald-matrix {
+  --primary: #00f5a0;
+  --primary-glow: rgba(0, 245, 160, 0.35);
+  --primary-rgb: 0, 245, 160;
+  --accent: #00d9f5;
+  --accent-glow: rgba(0, 217, 245, 0.3);
+  --bg-base: #030d09;
+  --card-bg: rgba(7, 27, 19, 0.72);
+  --card-border: rgba(0, 245, 160, 0.18);
+  --glow-1: rgba(0, 245, 160, 0.15);
+  --glow-2: rgba(0, 217, 245, 0.12);
+}
+
+/* Theme: Solar Sunset */
+body.theme-sunset-amber {
+  --primary: #ff9f1c;
+  --primary-glow: rgba(255, 159, 28, 0.35);
+  --primary-rgb: 255, 159, 28;
+  --accent: #ff4071;
+  --accent-glow: rgba(255, 64, 113, 0.3);
+  --bg-base: #110703;
+  --card-bg: rgba(31, 14, 8, 0.72);
+  --card-border: rgba(255, 159, 28, 0.18);
+  --glow-1: rgba(255, 159, 28, 0.15);
+  --glow-2: rgba(255, 64, 113, 0.12);
+}
+
+/* Theme: Minimal OLED */
+body.theme-oled-dark {
+  --primary: #ffffff;
+  --primary-glow: rgba(255, 255, 255, 0.2);
+  --primary-rgb: 255, 255, 255;
+  --accent: #94a3b8;
+  --accent-glow: rgba(148, 163, 184, 0.2);
+  --bg-base: #000000;
+  --card-bg: rgba(18, 18, 18, 0.88);
+  --card-border: rgba(255, 255, 255, 0.12);
+  --glow-1: rgba(255, 255, 255, 0.05);
+  --glow-2: rgba(148, 163, 184, 0.05);
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--bg-base);
+  color: var(--text-main);
+  overflow-x: hidden;
+  transition: background-color 0.4s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Animations */
+@keyframes pulseColon {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.25; transform: scale(0.92); }
+}
+
+@keyframes pulseDot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.6; }
+}
+
+@keyframes floatAmbient {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(30px, -20px) scale(1.1); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popIn {
+  0% { opacity: 0; transform: scale(0.92); }
+  70% { opacity: 1; transform: scale(1.03); }
+  100% { opacity: 1; transform: scale(1); }
+}
